@@ -9,8 +9,6 @@ export default function LoginScreen({ navigation }) {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleLogin = () => {
-    console.log('Logging in with:', username, password);
-
     fetch('http://57.128.212.224:3000/login', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -22,8 +20,6 @@ export default function LoginScreen({ navigation }) {
   }
 
   const handleRegister = () => {
-    console.log('Registering with:', registerUsername, registerPassword);
-
     fetch('http://57.128.212.224:3000/register', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},

@@ -11,7 +11,6 @@ function login(app) {
 
   app.post('/register', async (req, res) => {
     const { username, password, secondPassword } = req.body;
-    console.log(req.body);
   
     if (password !== secondPassword) {
       return res.status(400).json({ message: 'Passwords do not match!', password, secondPassword });
