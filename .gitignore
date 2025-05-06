@@ -36,7 +36,7 @@ yarn-error.*
 .env*.local
 
 # Database configuration
-backend/routes/db.js
+backend/assets/.env
 
 # Logs
 logs/
