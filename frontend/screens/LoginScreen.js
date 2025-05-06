@@ -40,6 +40,7 @@ export default function LoginScreen({ navigation }) {
 
       if (response.ok && data.token) {
         await SecureStore.setItemAsync("token", data.token);
+
         navigation.navigate("Drawer", { screen: "Home" });
       } else {
         alert("Login failed: " + data.message);
@@ -56,6 +57,7 @@ export default function LoginScreen({ navigation }) {
       body: JSON.stringify({
         username: registerUsername,
         password: registerPassword,
+
         secondPassword: confirmPassword,
       }),
     })

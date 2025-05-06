@@ -8,17 +8,16 @@ import BestScreen from "./screens/BestScreen";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import AddScreen from "./screens/AddScreen";
 import LoginScreen from "./screens/LoginScreen";
-import { CustomDrawerContent } from "./components/CustomDrowerContent"; // Import CustomDrawerContent
+import { CustomDrawerContent } from "./components/CustomDrowerContent";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-// Definicja DrawerNavigator
 function DrawerNavigator() {
   return (
     <Drawer.Navigator
       initialRouteName="Home"
-      drawerContent={(props) => <CustomDrawerContent {...props} />} // Użycie CustomDrawerContent
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen
         name="Home"
@@ -65,7 +64,7 @@ export default function App() {
         />
         <Stack.Screen
           name="Drawer"
-          component={DrawerNavigator} // Użycie DrawerNavigator
+          component={DrawerNavigator}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
