@@ -15,11 +15,13 @@ const pool = mysql.createPool({
   
   module.exports = pool.promise();
 
-  /*
-  hamburger menu:
-  -najnowsze
-  -najlepsze
-  -polubione
-  -dodaj
-  -wyloguj
-  */
+/*
+baza danych od postów:
+-id
+-user_id
+-content
+-image_url
+-date
+
+
+*/

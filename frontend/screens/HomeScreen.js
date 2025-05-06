@@ -1,10 +1,22 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import React, { useEffect } from "react"; 
+import { View, Text, StyleSheet } from "react-native";
+import * as SecureStore from "expo-secure-store";
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ navigation }) { 
+  useEffect(() => {
+    const checkToken = async () => {
+      const token = await SecureStore.getItemAsync("token");
+      if (!token) {
+        navigation.navigate("Login");
+      }
+    };
+
+    checkToken();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text></Text>
+      <Text style={styles.text}>Strona główna</Text>
     </View>
   );
 }
@@ -12,7 +24,11 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
   },
 });

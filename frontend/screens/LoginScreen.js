@@ -16,7 +16,7 @@ export default function LoginScreen({ navigation }) {
         try {
           const isLoggedIn = await checkLoginStatus();
           if (isLoggedIn) {
-            navigation.navigate("Home");
+            navigation.navigate("Drawer", { screen: "Home" });
           }
         } catch (error) {
           console.error("Error checking login status:", error);
@@ -38,12 +38,9 @@ export default function LoginScreen({ navigation }) {
       });
       const data = await response.json();
 
-      console.log("Response data:", data);
-
       if (response.ok && data.token) {
         await SecureStore.setItemAsync("token", data.token);
-        alert("Login successful!");
-        navigation.navigate("Home");
+        navigation.navigate("Drawer", { screen: "Home" });
       } else {
         alert("Login failed: " + data.message);
       }
@@ -63,7 +60,7 @@ export default function LoginScreen({ navigation }) {
       }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => alert(data.message))
       .catch((error) => console.error("Error:", error));
   };
 

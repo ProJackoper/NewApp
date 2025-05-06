@@ -1,9 +1,12 @@
 const express = require('express');
 const login = require('./routes/login');
+const postsRoutes = require('./routes/posts');
 
 const app = express();
 
 app.use(express.json());
+app.use('/uploads', express.static('uploads')); 
+app.use('/api', postsRoutes);
 
 login(app);
 
