@@ -16,7 +16,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Strona główna</Text>
+      <Text style={styles.text}>Main Side</Text>
     </View>
   );
 }
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: "bold",
   },
 });

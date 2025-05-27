@@ -31,7 +31,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://57.128.212.224:3000/login", {
+      const response = await fetch("http://57.128.212.224:3001/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -51,7 +51,7 @@ export default function LoginScreen({ navigation }) {
   };
 
   const handleRegister = () => {
-    fetch("http://57.128.212.224:3000/register", {
+    fetch("http://57.128.212.224:3001/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

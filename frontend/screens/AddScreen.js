@@ -62,7 +62,7 @@ export default function AddScreen() {
       const token = await SecureStore.getItemAsync("token");
       console.log("Token:", token);
   
-      const response = await fetch("http://57.128.212.224:3000/api/posts", {
+      const response = await fetch("http://57.128.212.224:3001/api/posts", {
         method: "POST",
         headers: {
           "Content-Type": "multipart/form-data",
