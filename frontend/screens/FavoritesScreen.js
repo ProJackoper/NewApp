@@ -99,7 +99,6 @@ export default function FavoritesScreen({ navigation }) {
     }
   };
 
-  // Filtrowanie tylko polubionych postów
   const favoritePosts = posts.filter((post) => likedPosts.includes(post.id));
 
   const renderPost = ({ item }) => {

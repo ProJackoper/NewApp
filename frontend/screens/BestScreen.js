@@ -97,7 +97,6 @@ export default function BestScreen({ navigation }) {
                   }
                 : post
             )
-            // Po zmianie lajków ponownie sortuj
             .sort((a, b) => (b.likes_count || 0) - (a.likes_count || 0))
         );
       }
